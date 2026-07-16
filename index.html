@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Corujão de Traders — Safirion</title>
+<meta name="description" content="Corujão de Traders — 25 de Julho, a partir das 18 horas. Entre no grupo e participe ao vivo com a Safirion.">
+<meta property="og:title" content="Corujão de Traders — Safirion">
+<meta property="og:description" content="25 de Julho · a partir das 18 horas. Entre no grupo.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/logo.webp">
+<!-- Meta Pixel (01: 988404074235952 · 02: 2533569613744356 = "Safirion BM Leo") -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '988404074235952');
+fbq('init', '2533569613744356');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=988404074235952&ev=PageView&noscript=1">
+<img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=2533569613744356&ev=PageView&noscript=1">
+</noscript>
+<!-- End Meta Pixel -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/bebas-400.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/montserrat-400.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/montserrat-500.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/montserrat-700.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/montserrat-800.woff2" crossorigin>
+<style>
+  @font-face{font-family:'Bebas Neue';font-weight:400;font-display:block;
+    src:url('assets/fonts/bebas-400.woff2') format('woff2')}
+  @font-face{font-family:'Montserrat';font-weight:400;font-display:block;
+    src:url('assets/fonts/montserrat-400.woff2') format('woff2')}
+  @font-face{font-family:'Montserrat';font-weight:500;font-display:block;
+    src:url('assets/fonts/montserrat-500.woff2') format('woff2')}
+  @font-face{font-family:'Montserrat';font-weight:700;font-display:block;
+    src:url('assets/fonts/montserrat-700.woff2') format('woff2')}
+  @font-face{font-family:'Montserrat';font-weight:800;font-display:block;
+    src:url('assets/fonts/montserrat-800.woff2') format('woff2')}
+
+  :root{--bg:#04060d}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    background:var(--bg);
+    color:#fff;
+    font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+    display:flex;align-items:center;justify-content:center;
+    min-height:100svh;
+    overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* Palco: proporção 1080:1920, sempre cabe na tela.
+     container-type habilita unidades cqw (1cqw = 1% da largura do palco) */
+  .stage{
+    position:relative;
+    width:min(100vw, calc(100svh * 0.5625));
+    aspect-ratio:1080 / 1920;
+    overflow:hidden;
+    background:#04060d;
+    box-shadow:0 0 120px rgba(0,0,0,.9);
+    isolation:isolate;
+    container-type:size;
+  }
+
+  .layer{
+    position:absolute;
+    display:block;
+    pointer-events:none;
+    user-select:none;
+    -webkit-user-drag:none;
+  }
+
+  /* ---- camadas de imagem (ordem do painel do Photoshop) ---- */
+  .l-background{left:0;top:0;width:100%;height:100%;object-fit:cover;z-index:1}
+  .l-sombras   {left:0;      top:38.750%;width:100%;   z-index:2}
+  .l-brilho    {left:0;      top:15.260%;width:100%;   z-index:3; mix-blend-mode:screen}
+  .l-fotos     {left:2.500%; top:13.021%;width:95.000%;z-index:4;
+                filter:drop-shadow(0 18px 40px rgba(0,0,0,.55))}
+  .l-estrela   {left:0;      top:38.750%;width:100%;   z-index:7; mix-blend-mode:screen}
+  .l-fx        {left:0;top:0;width:100%;height:100%;object-fit:cover;z-index:8;
+                mix-blend-mode:soft-light;opacity:.5}
+  .l-brilho2   {left:0;      top:7.552%; width:100%;   z-index:9; mix-blend-mode:screen}
+  .l-leaks     {left:0;      top:15.625%;width:100%;   z-index:10;mix-blend-mode:screen;opacity:.85}
+  .l-logo      {left:40.000%;top:2.344%; width:20.000%;z-index:11}
+  .l-textura   {left:0;top:0;width:100%;height:100%;object-fit:cover;z-index:12;
+                mix-blend-mode:soft-light;opacity:.22}
+
+  /* ---- TEXTO real (mesma geometria da arte: canvas 1080x1920) ---- */
+  .txt{
+    position:absolute;left:0;right:0;
+    text-align:center;line-height:1;white-space:nowrap;
+    color:#fff;z-index:5;pointer-events:none;
+  }
+  .kicker{
+    top:12.889%;
+    font:400 2.646cqw 'Montserrat',sans-serif;
+    letter-spacing:1.111cqw;text-indent:1.111cqw;
+    color:#ebeae7;
+  }
+  .kicker b{font-weight:800}
+  .titulo{inset:0;z-index:5}
+  .titulo span{
+    position:absolute;left:0;right:0;
+    text-align:center;line-height:1;white-space:nowrap;
+    font:400 20.106cqw 'Bebas Neue',sans-serif;
+    color:#f6f5ed;
+  }
+  .t1{top:65.692%;transform:scaleX(1.152)}
+  .t2{top:73.296%;transform:scaleX(0.593)}
+  .data{
+    top:83.039%;
+    font:700 6.217cqw 'Montserrat',sans-serif;
+    letter-spacing:1.750cqw;text-indent:1.750cqw;
+    color:#f6f5ed;
+  }
+
+  /* ---- BOTÃO real (pill 464x101 @ x308 y1680, cor da arte #006AC1) ---- */
+  .cta{
+    position:absolute;
+    left:28.519%;top:90.313%;width:42.963%;height:5.208%;
+    z-index:6;
+    display:flex;align-items:center;justify-content:center;
+    background:#006AC1;
+    border-radius:999px;
+    text-decoration:none;
+    font:500 3.836cqw 'Montserrat',sans-serif;
+    letter-spacing:-.284cqw;
+    color:#edeade;
+    cursor:pointer;
+    transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
+    box-shadow:0 8px 22px rgba(23,132,214,.45);
+  }
+  .cta b{font-weight:800}
+  .cta:hover{transform:scale(1.035);background:#0a7fe0;box-shadow:0 10px 30px rgba(40,160,255,.7)}
+  .cta:active{transform:scale(.99)}
+  .cta::after{
+    content:"";position:absolute;inset:0;border-radius:999px;
+    animation:pulse 2.6s ease-out infinite;pointer-events:none;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(45,160,255,.5)}
+    70%{box-shadow:0 0 0 22px rgba(45,160,255,0)}
+    100%{box-shadow:0 0 0 0 rgba(45,160,255,0)}
+  }
+
+  /* Entrada suave ao carregar */
+  .fade{opacity:0;animation:fadeIn 1s ease forwards}
+  .d1{animation-delay:.05s}.d2{animation-delay:.25s}.d3{animation-delay:.45s}
+  @keyframes fadeIn{to{opacity:1}}
+
+  @media (prefers-reduced-motion: reduce){
+    .fade{animation:none;opacity:1}
+    .cta::after{animation:none}
+  }
+</style>
+</head>
+<body>
+  <main class="stage">
+    <!-- camadas de imagem, ordem idêntica ao painel (de baixo para cima) -->
+    <img class="layer l-background"        src="assets/background.webp"   alt="" fetchpriority="high">
+    <img class="layer l-sombras"           src="assets/sombras.webp"      alt="">
+    <img class="layer l-brilho"            src="assets/brilho-azul.webp"  alt="">
+    <img class="layer l-fotos fade d1"     src="assets/fotos.webp"        alt="Traders participantes do Corujão">
+
+    <!-- TEXTO real -->
+    <p class="txt kicker fade d2">A PARTIR DAS <b>18 HORAS</b></p>
+    <h1 class="txt titulo fade d2" aria-label="Corujão de Traders">
+      <span class="t1">CORUJÃO</span>
+      <span class="t2">DE TRADERS</span>
+    </h1>
+    <p class="txt data fade d2">25 DE JULHO</p>
+
+    <!-- BOTÃO real -->
+    <a class="cta fade d3" href="#">ENTRAR&nbsp;<b>NO GRUPO</b></a>
+
+    <img class="layer l-estrela"           src="assets/estrela.webp"      alt="">
+    <img class="layer l-fx"                src="assets/fx.webp"           alt="">
+    <img class="layer l-brilho2"           src="assets/brilho-azul2.webp" alt="">
+    <img class="layer l-leaks"             src="assets/leaks.webp"        alt="">
+    <img class="layer l-logo fade d1"      src="assets/logo.webp"         alt="Safirion — Confiança para investir">
+    <img class="layer l-textura"           src="assets/textura.webp"      alt="">
+  </main>
+
+  <script>
+    // Link do grupo — troque pela URL real (WhatsApp/Telegram)
+    var GRUPO_URL = "#";
+    document.querySelector('.cta').addEventListener('click', function(e){
+      // evento de conversão nos dois pixels
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', {content_name: 'Corujão de Traders — Entrar no Grupo'});
+      }
+      if(GRUPO_URL === "#"){ e.preventDefault(); return; }
+      e.preventDefault();
+      window.open(GRUPO_URL, '_blank', 'noopener');
+    });
+  </script>
+</body>
+</html>
