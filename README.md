@@ -25,7 +25,7 @@ qualquer resolução — com tipografia casada com a arte por medição pixel a 
 
 | Elemento | Fonte | Ajuste |
 |---|---|---|
-| CORUJÃO / DE TRADERS | **Anton** (pesada condensada) | condensação por linha via `scaleX`, leve inclinação à esquerda |
+| CORUJÃO / DE TRADERS | **Montserrat 800** | duas linhas igualadas na mesma largura (bloco alinhado) |
 | 25 DE JULHO | Montserrat 700 | tracking largo |
 | A PARTIR DAS 18 HORAS | Montserrat 400 + **18 HORAS** 800 | tracking largo, peso misto |
 | ENTRAR NO GRUPO | Montserrat 500 + **NO GRUPO** 800 | pill `#006AC1`, peso misto |
