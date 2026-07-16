@@ -8,13 +8,13 @@ modos de mesclagem (`screen` para brilhos/estrelas/leaks, `soft-light` para FX/t
 
 ```
 index.html        ← a landing page (auto-contida, responsiva)
-assets/           ← camadas otimizadas em .webp (16 MB → 2,4 MB, −85%)
-  background.webp  sombras.webp  brilho-azul2.webp  fotos.webp
-  estrela.webp     fx.webp       brilho-azul.webp   leaks.webp
+assets/           ← camadas otimizadas em .webp
+  background.webp  sombras.webp  fotos.webp   estrela.webp
+  fx.webp          brilho-azul.webp           leaks.webp
   logo.webp        textura.webp
   (texto.webp e botao.webp existem mas não são mais usados — o texto agora é HTML real)
-assets/fonts/     ← fontes self-hosted em woff2 com subset (~42 KB no total)
-  barlow-400.woff2  montserrat-500.woff2  montserrat-700.woff2  opensans-400.woff2
+assets/fonts/     ← fontes woff2 com subset (também embutidas em base64 no HTML)
+  anton-400.woff2  montserrat-400/500/700/800.woff2  bebas-400.woff2
 *.png             ← camadas originais exportadas do Photoshop (fonte, editáveis)
 ```
 
@@ -25,10 +25,13 @@ qualquer resolução — com tipografia casada com a arte por medição pixel a 
 
 | Elemento | Fonte | Ajuste |
 |---|---|---|
-| CORUJÃO / DE TRADERS | Barlow 400 | cap-height 10% da largura, tracking levemente negativo |
-| 25 DE JULHO | Montserrat 700 | tracking largo (≈0,45 em) |
-| A PARTIR DAS 18 HORAS | Montserrat 500 | tracking largo |
-| ENTRAR NO GRUPO | Open Sans 400 | pill `#006AC1` 464×101, cantos totalmente arredondados |
+| CORUJÃO / DE TRADERS | **Anton** (pesada condensada) | condensação por linha via `scaleX`, leve inclinação à esquerda |
+| 25 DE JULHO | Montserrat 700 | tracking largo |
+| A PARTIR DAS 18 HORAS | Montserrat 400 + **18 HORAS** 800 | tracking largo, peso misto |
+| ENTRAR NO GRUPO | Montserrat 500 + **NO GRUPO** 800 | pill `#006AC1`, peso misto |
+
+> As fontes vão **embutidas em base64** dentro do `index.html`, então carregam em
+> qualquer navegador (inclusive Safari via `file://`), sem requisição externa.
 
 Os tamanhos usam unidades de container (`cqw`), então o texto escala junto com o
 palco em qualquer tela, mantendo o alinhamento da arte (verificado por screenshot
@@ -41,7 +44,7 @@ headless: todas as linhas dentro de 1–2 px do original).
 | 12 | **TEXTURA FOLHA** | Textura de papel/folha — profundidade e aspecto orgânico | `soft-light` 22% |
 | 11 | **LOGO** | Identidade visual principal da marca (Safirion) | normal |
 | 10 | **Leaks Light Fx** | Vazamento de luz — iluminação cinematográfica premium | `screen` 85% |
-| 9 | **BRILHO AZUL (2º)** | Glow azul difuso iluminando por cima da composição | `screen` |
+| 9 | _(removida)_ | camada de brilho azul 2 foi apagada do projeto | — |
 | 8 | **FX** | Efeitos especiais — partículas, reflexos, gradientes | `soft-light` 50% |
 | 7 | **ESTRELA BRILHANTE BRANCA** | Sparkles — destaca pontos específicos do layout | `screen` |
 | 6 | **BOTÃO** | CTA "Entrar no grupo" (clicável, hover + pulso) | normal |
@@ -70,18 +73,15 @@ servidor. Guarde-os fora deste projeto (o site é estático e todo o código-fon
 público). Use-os apenas em backend próprio, Conversions API Gateway ou integração
 de plataforma (ex.: eventos server-side do gerenciador de tags).
 
-## Configurar o botão "Entrar no grupo"
+## Botão "Entrar no grupo"
 
-No final do `index.html`, troque a linha:
-
-```js
-var GRUPO_URL = "#";
-```
-
-pela URL real do grupo (WhatsApp/Telegram), ex.:
+Já aponta para o grupo do Telegram (configurado no final do `index.html`):
 
 ```js
-var GRUPO_URL = "https://chat.whatsapp.com/SEU-CODIGO";
+var GRUPO_URL = "https://t.me/+VnIXDh-4jTw2YjFh";
 ```
+
+Para trocar, basta editar essa linha. O clique também dispara o evento `Lead`
+nos dois Meta Pixels antes de abrir o link.
 
 O palco mantém a proporção 1080×1920 e sempre cabe na tela (mobile e desktop).
