@@ -26,7 +26,7 @@ qualquer resolução — com tipografia casada com a arte por medição pixel a 
 | Elemento | Fonte | Ajuste |
 |---|---|---|
 | CORUJÃO / DE TRADERS | **Montserrat 800** | duas linhas igualadas na mesma largura (bloco alinhado) |
-| 25 DE JULHO | Montserrat 700 | tracking largo |
+| 22 DE AGOSTO | Montserrat 700 | tracking largo |
 | A PARTIR DAS 18 HORAS | Montserrat 400 + **18 HORAS** 800 | tracking largo, peso misto |
 | ENTRAR NO GRUPO | Montserrat 500 + **NO GRUPO** 800 | pill `#006AC1`, peso misto |
 
@@ -48,7 +48,7 @@ headless: todas as linhas dentro de 1–2 px do original).
 | 8 | **FX** | Efeitos especiais — partículas, reflexos, gradientes | `soft-light` 50% |
 | 7 | **ESTRELA BRILHANTE BRANCA** | Sparkles — destaca pontos específicos do layout | `screen` |
 | 6 | **BOTÃO** | CTA "Entrar no grupo" (clicável, hover + pulso) | normal |
-| 5 | **TEXTO** | Títulos e informações (Corujão de Traders · 25 de Julho) | normal |
+| 5 | **TEXTO** | Títulos e informações (Corujão de Traders · 22 de Agosto) | normal |
 | 4 | **FOTOS** | Collage dos traders | normal |
 | 3 | **BRILHO AZUL** | Glow ciano intenso atrás das fotos | `screen` |
 | 2 | **SOMBRAS PRETAS** | Sombras escuras — contraste e profundidade na base | normal |
