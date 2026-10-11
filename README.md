@@ -2,14 +2,15 @@
 
 Landing page com a arte oficial da 4ª edição (16 de outubro, a partir das 18 horas).
 O botão "ENTRAR NO GRUPO" já vem desenhado no alto da arte; a página põe por cima dele
-uma área de clique invisível.
+uma área de clique invisível. Abaixo da arte, a página continua com as provas sociais.
 
 ## Estrutura
 
 ```
 index.html                 ← a landing page (auto-contida, responsiva)
-assets/arte-16-out.webp    ← arte completa 1080×1920 (única imagem usada)
+assets/arte-16-out.webp    ← arte completa 1080×1920 (a primeira tela)
 assets/og-16-out.jpg       ← a mesma arte em 720×1280, para a prévia do link (WhatsApp, Telegram)
+assets/provas/             ← provas sociais: print-1…6.webp, depoimento-video.mp4 e a capa .jpg
 assets/fonts/              ← Montserrat (também embutida em base64 no HTML)
 ```
 
@@ -21,6 +22,27 @@ A área de clique (`.cta`) é em `%` do palco, então escala junto com a arte. E
 que o botão desenhado, para o toque ter 44px ou mais no celular; o `.cta::after` fica
 exatamente sobre o desenho (pulso, brilho e foco). Ao trocar a arte, meça onde o botão
 fica nela e ajuste `top`, `width` e `height` da `.cta` e o `inset` do `.cta::after`.
+
+## Provas sociais
+
+Abaixo da arte fica a seção "Quem já viveu o Corujão": um depoimento em vídeo (com um trecho da
+fala escrito ao lado) e os prints de conversa, seguidos de um botão "ENTRAR NO GRUPO".
+
+- **Celular (até 767px):** os prints viram um **carrossel**, um por vez num quadro 4:3. Troca
+  pelas setas, por deslize lateral ou sozinho a cada 4,5 s (para de andar sozinho quando a
+  pessoa mexe, e não anda com "menos movimento" ligado). Não há rolagem lateral: todos os
+  prints ocupam a mesma célula e a troca é por opacidade. Sem JavaScript, ficam um embaixo do
+  outro.
+- **Tablet (768px) e computador (1024px):** mural com todos os prints à vista, em 2 e 3 colunas
+  (no computador, o vídeo em pé é a primeira coluna).
+- **Acrescentar um print:** salve a imagem em `assets/provas/` e copie um `<figure class="prova pN revelar">`
+  dentro de `#mural`, no `index.html`, com `width`, `height`, um `alt` curto e o texto do print na
+  `<figcaption class="sr-only">`. A ordem no HTML é a ordem do carrossel. No mural, os 3 primeiros
+  formam uma coluna e os demais a outra (`.mural > :nth-child(...)`), e cada print precisa da sua
+  regra `.pN{grid-row:span X}`, com X = altura ÷ largura × 200 + 8. Mantenha as duas colunas com
+  somas parecidas.
+- **Vídeo:** só é baixado quando a pessoa toca no play; pausa ao sair da tela.
+- **Botão do fim:** mesmo link e mesmo evento `Lead` do botão da arte.
 
 ## Como visualizar
 
