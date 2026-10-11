@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Corujão da Safirion 3ª Edição · 18 de Setembro às 18h | Safirion</title>
-<meta name="description" content="Corujão da Safirion 3ª Edição: 18 de setembro, a partir das 18 horas. Uma noite ao vivo com traders e especialistas da Safirion. Entre no grupo gratuito e participe.">
-<meta name="keywords" content="Corujão da Safirion, Safirion, 3ª edição, traders, trading, day trade, mercado financeiro, evento ao vivo, 18 de setembro">
+<title>Corujão da Safirion 4ª Edição · 16 de Outubro às 18h | Safirion</title>
+<meta name="description" content="Corujão da Safirion 4ª Edição: 16 de outubro, a partir das 18 horas. Uma noite ao vivo com traders e especialistas da Safirion. Entre no grupo gratuito e participe.">
+<meta name="keywords" content="Corujão da Safirion, Safirion, 4ª edição, traders, trading, day trade, mercado financeiro, evento ao vivo, 16 de outubro">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Safirion">
 <meta name="theme-color" content="#04060d">
@@ -15,30 +15,30 @@
 <meta property="og:url" content="https://safiriontradingbrasil.com/">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Safirion">
-<meta property="og:title" content="Corujão da Safirion — 3ª Edição · 18 de Setembro">
-<meta property="og:description" content="18 de setembro, a partir das 18 horas. Uma noite ao vivo com traders da Safirion. Entre no grupo e participe.">
-<meta property="og:image" content="https://safiriontradingbrasil.com/assets/og-edicao-3.jpg">
+<meta property="og:title" content="Corujão da Safirion — 4ª Edição · 16 de Outubro">
+<meta property="og:description" content="16 de outubro, a partir das 18 horas. Uma noite ao vivo com traders da Safirion. Entre no grupo e participe.">
+<meta property="og:image" content="https://safiriontradingbrasil.com/assets/og-16-out.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="720">
 <meta property="og:image:height" content="1280">
-<meta property="og:image:alt" content="Arte do Corujão da Safirion 3ª Edição — 18 de setembro, a partir das 18 horas">
+<meta property="og:image:alt" content="Arte do Corujão da Safirion 4ª Edição — 16 de outubro, a partir das 18 horas">
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Corujão da Safirion — 3ª Edição · 18 de Setembro">
-<meta name="twitter:description" content="18 de setembro, a partir das 18 horas. Uma noite ao vivo com traders da Safirion. Entre no grupo.">
-<meta name="twitter:image" content="https://safiriontradingbrasil.com/assets/og-edicao-3.jpg">
+<meta name="twitter:title" content="Corujão da Safirion — 4ª Edição · 16 de Outubro">
+<meta name="twitter:description" content="16 de outubro, a partir das 18 horas. Uma noite ao vivo com traders da Safirion. Entre no grupo.">
+<meta name="twitter:image" content="https://safiriontradingbrasil.com/assets/og-16-out.jpg">
 <!-- Dados estruturados do evento (Google) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Event",
-  "name": "Corujão da Safirion — 3ª Edição",
+  "name": "Corujão da Safirion — 4ª Edição",
   "description": "Uma noite ao vivo com traders e especialistas da Safirion, a partir das 18 horas.",
-  "startDate": "2026-09-18T18:00:00-03:00",
+  "startDate": "2026-10-16T18:00:00-03:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
   "location": {"@type": "VirtualLocation", "url": "https://t.me/+bC0pRRqHmVpkYzhh"},
-  "image": ["https://safiriontradingbrasil.com/assets/og-edicao-3.jpg"],
+  "image": ["https://safiriontradingbrasil.com/assets/og-16-out.jpg"],
   "url": "https://safiriontradingbrasil.com/",
   "inLanguage": "pt-BR",
   "isAccessibleForFree": true,
@@ -110,33 +110,29 @@ fbq('track', 'PageView');
     object-fit:cover;display:block;
     user-select:none;-webkit-user-drag:none;
   }
-  /* ---- BOTÃO sobreposto à parte de baixo da arte ---- */
+  /* ---- ÁREA DE CLIQUE sobre o botão "ENTRAR NO GRUPO" que já vem desenhado na arte ----
+     O botão da arte ocupa x 22,96%–76,94% e y 8,44%–13,28% do palco (medido no pixel).
+     O link é maior que o desenho para o toque ter 44px ou mais no celular;
+     o ::after fica exatamente sobre o desenho (brilho, pulso e foco). */
   .cta{
     position:absolute;
-    left:50%;bottom:2%;transform:translateX(-50%);
-    width:60%;height:5%;
+    left:50%;top:6.86%;transform:translateX(-50%);
+    width:60%;height:8%;
     z-index:2;
-    display:flex;align-items:center;justify-content:center;
-    background:linear-gradient(180deg,#1a8cf0 0%,#006AC1 100%);
-    border:1px solid rgba(140,205,255,.55);
-    border-radius:999px;
-    text-decoration:none;
-    font:500 4.2cqw 'Montserrat',sans-serif;
-    letter-spacing:.05cqw;
-    color:#fff;
-    white-space:nowrap;
     cursor:pointer;
-    transition:transform .25s ease, filter .25s ease, box-shadow .25s ease;
-    box-shadow:0 10px 30px rgba(0,0,0,.6), 0 0 28px rgba(40,150,255,.55);
+    -webkit-tap-highlight-color:transparent;
   }
-  .cta b{font-weight:800}
-  .cta:hover{transform:translateX(-50%) scale(1.035);filter:brightness(1.12);
-             box-shadow:0 12px 34px rgba(0,0,0,.6), 0 0 40px rgba(60,170,255,.8)}
-  .cta:active{transform:translateX(-50%) scale(.99)}
   .cta::after{
-    content:"";position:absolute;inset:0;border-radius:999px;
+    content:"";position:absolute;inset:19.75% 5%;border-radius:999px;
     animation:pulse 2.6s ease-out infinite;pointer-events:none;
+    transition:-webkit-backdrop-filter .25s ease, backdrop-filter .25s ease;
   }
+  @media (hover:hover) and (pointer:fine){
+    .cta:hover::after{-webkit-backdrop-filter:brightness(1.16);backdrop-filter:brightness(1.16)}
+  }
+  .cta:active::after{-webkit-backdrop-filter:brightness(.88);backdrop-filter:brightness(.88)}
+  .cta:focus-visible{outline:none}
+  .cta:focus-visible::after{outline:2px solid #fff;outline-offset:3px}
   @keyframes pulse{
     0%{box-shadow:0 0 0 0 rgba(45,160,255,.55)}
     70%{box-shadow:0 0 0 22px rgba(45,160,255,0)}
@@ -154,11 +150,11 @@ fbq('track', 'PageView');
 </head>
 <body>
   <main class="stage">
-    <h1 class="sr-only">Corujão da Safirion — 3ª Edição</h1>
-    <p class="sr-only">18 de setembro, a partir das 18 horas. Uma noite ao vivo com traders e especialistas da Safirion. Entre no grupo e participe.</p>
-    <img class="arte fade d1" src="assets/arte-edicao-3.webp" fetchpriority="high"
-         alt="Corujão da Safirion — 3ª Edição · 18 de setembro, a partir das 18 horas">
-    <a class="cta fade d3" href="#">ENTRAR&nbsp;<b>NO GRUPO</b></a>
+    <h1 class="sr-only">Corujão da Safirion — 4ª Edição</h1>
+    <p class="sr-only">16 de outubro, a partir das 18 horas. Uma noite ao vivo com traders e especialistas da Safirion. Entre no grupo e participe.</p>
+    <img class="arte fade d1" src="assets/arte-16-out.webp" fetchpriority="high"
+         alt="Corujão da Safirion — 4ª Edição · 16 de outubro, a partir das 18 horas">
+    <a class="cta fade d3" href="#"><span class="sr-only">Entrar no grupo</span></a>
   </main>
   <script>
     // Link do grupo — troque pela URL real (WhatsApp/Telegram)
@@ -166,7 +162,7 @@ fbq('track', 'PageView');
     document.querySelector('.cta').addEventListener('click', function(e){
       // evento de conversão nos dois pixels
       if (typeof fbq === 'function') {
-        fbq('track', 'Lead', {content_name: 'Corujão da Safirion 3ª Edição — Entrar no Grupo'});
+        fbq('track', 'Lead', {content_name: 'Corujão da Safirion 4ª Edição — Entrar no Grupo'});
       }
       if(GRUPO_URL === "#"){ e.preventDefault(); return; }
       e.preventDefault();

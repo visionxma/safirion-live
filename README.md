@@ -1,22 +1,26 @@
-# Corujão da Safirion — 3ª Edição · Landing Page
+# Corujão da Safirion — 4ª Edição · Landing Page
 
-Landing page com a arte oficial da 3ª edição (18 de setembro, a partir das 18 horas)
-e um botão "Entrar no grupo" sobreposto na parte de baixo da imagem.
+Landing page com a arte oficial da 4ª edição (16 de outubro, a partir das 18 horas).
+O botão "ENTRAR NO GRUPO" já vem desenhado no alto da arte; a página põe por cima dele
+uma área de clique invisível.
 
 ## Estrutura
 
 ```
 index.html                 ← a landing page (auto-contida, responsiva)
-assets/arte-edicao-3.webp  ← arte completa 1080×1920 (única imagem usada)
-assets/fonts/              ← Montserrat (também embutida em base64 no HTML, usada no botão)
+assets/arte-16-out.webp    ← arte completa 1080×1920 (única imagem usada)
+assets/og-16-out.jpg       ← a mesma arte em 720×1280, para a prévia do link (WhatsApp, Telegram)
+assets/fonts/              ← Montserrat (também embutida em base64 no HTML)
 ```
 
-As camadas antigas (`assets/*.webp` e `*.png` da edição anterior) continuam no repositório,
-mas não são mais usadas pelo `index.html`.
+As artes e camadas das edições anteriores (`assets/arte-edicao-3.webp`, `assets/*.webp` e
+`*.png`) continuam no repositório, mas não são mais usadas pelo `index.html`.
 
 O palco mantém a proporção 1080×1920 e sempre cabe na tela (mobile e desktop).
-O botão usa unidades `cqw`/`%`, então escala junto com a arte. Para ajustar a posição,
-edite `bottom`, `width` e `height` da classe `.cta` no `index.html`.
+A área de clique (`.cta`) é em `%` do palco, então escala junto com a arte. Ela é maior
+que o botão desenhado, para o toque ter 44px ou mais no celular; o `.cta::after` fica
+exatamente sobre o desenho (pulso, brilho e foco). Ao trocar a arte, meça onde o botão
+fica nela e ajuste `top`, `width` e `height` da `.cta` e o `inset` do `.cta::after`.
 
 ## Como visualizar
 
