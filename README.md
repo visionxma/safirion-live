@@ -2,7 +2,8 @@
 
 Landing page com a arte oficial da 4ª edição (16 de outubro, a partir das 18 horas).
 O botão "ENTRAR NO GRUPO" já vem desenhado no alto da arte; a página põe por cima dele
-uma área de clique invisível. Abaixo da arte, a página continua com as provas sociais.
+uma área de clique invisível. Abaixo da arte há uma segunda tela, do mesmo tamanho, com as
+provas sociais em carrossel.
 
 ## Estrutura
 
@@ -23,25 +24,25 @@ que o botão desenhado, para o toque ter 44px ou mais no celular; o `.cta::after
 exatamente sobre o desenho (pulso, brilho e foco). Ao trocar a arte, meça onde o botão
 fica nela e ajuste `top`, `width` e `height` da `.cta` e o `inset` do `.cta::after`.
 
-## Provas sociais
+## Provas sociais (segunda tela)
 
-Abaixo da arte fica a seção "Quem já viveu o Corujão": um depoimento em vídeo (com um trecho da
-fala escrito ao lado) e os prints de conversa, seguidos de um botão "ENTRAR NO GRUPO".
+Regra do dono (11/10/2026): **tudo fica na mesma proporção da hero, sempre para celular, e as
+informações ficam em carrossel de provas sociais.**
 
-- **Celular (até 767px):** os prints viram um **carrossel**, um por vez num quadro 4:3. Troca
-  pelas setas, por deslize lateral ou sozinho a cada 4,5 s (para de andar sozinho quando a
-  pessoa mexe, e não anda com "menos movimento" ligado). Não há rolagem lateral: todos os
-  prints ocupam a mesma célula e a troca é por opacidade. Sem JavaScript, ficam um embaixo do
-  outro.
-- **Tablet (768px) e computador (1024px):** mural com todos os prints à vista, em 2 e 3 colunas
-  (no computador, o vídeo em pé é a primeira coluna).
-- **Acrescentar um print:** salve a imagem em `assets/provas/` e copie um `<figure class="prova pN revelar">`
-  dentro de `#mural`, no `index.html`, com `width`, `height`, um `alt` curto e o texto do print na
-  `<figcaption class="sr-only">`. A ordem no HTML é a ordem do carrossel. No mural, os 3 primeiros
-  formam uma coluna e os demais a outra (`.mural > :nth-child(...)`), e cada print precisa da sua
-  regra `.pN{grid-row:span X}`, com X = altura ÷ largura × 200 + 8. Mantenha as duas colunas com
-  somas parecidas.
-- **Vídeo:** só é baixado quando a pessoa toca no play; pausa ao sair da tela.
+- A segunda tela (`.painel`) tem a mesma largura e a mesma proporção 1080×1920 do palco da arte em
+  qualquer aparelho. No computador e no tablet ela NÃO alarga: são duas telas em pé, centradas.
+- Tudo dentro dela é medido em `cqw` (1% da largura do painel), com piso em `rem` para toque e
+  leitura, então escala junto, como a arte. Seção nova nesta página segue o mesmo molde.
+- As provas ficam num **carrossel** de 4 slides: o vídeo (em pé, com um trecho da fala por cima do
+  pé) e os 6 prints, dois por slide. Troca pelas setas, por deslize lateral ou sozinho a cada 6 s
+  (para quando a pessoa mexe; não anda com "menos movimento"). Não há rolagem lateral: os slides
+  ocupam a mesma célula e a troca é por opacidade. Sem JavaScript, tudo fica um embaixo do outro.
+- **Acrescentar prints:** salve em `assets/provas/` e crie mais um `<div class="slide sl-X">` com
+  dois `<figure class="prova">` dentro de `#carrossel` (com `width`, `height`, `alt` curto e o
+  texto do print na `<figcaption class="sr-only">`). Dê ao slide a regra
+  `.js-ok .sl-X{grid-template-rows:minmax(0,Afr) minmax(0,Bfr)}`, com A e B = altura de cada print
+  numa largura de 342px. Os pontos do carrossel se contam sozinhos.
+- **Vídeo:** só é baixado quando a pessoa toca no play; pausa ao trocar de slide ou sair da tela.
 - **Botão do fim:** mesmo link e mesmo evento `Lead` do botão da arte.
 
 ## Como visualizar
