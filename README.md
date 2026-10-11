@@ -12,6 +12,7 @@ index.html                 ← a landing page (auto-contida, responsiva)
 assets/arte-16-out.webp    ← arte completa 1080×1920 (a primeira tela)
 assets/og-16-out.jpg       ← a mesma arte em 720×1280, para a prévia do link (WhatsApp, Telegram)
 assets/provas/             ← provas sociais: print-1…6.webp, depoimento-video.mp4 e a capa .jpg
+assets/botao-entrar.webp   ← o botão "ENTRAR NO GRUPO" recortado da arte (botão da segunda tela)
 assets/fonts/              ← Montserrat (também embutida em base64 no HTML)
 ```
 
@@ -43,7 +44,10 @@ informações ficam em carrossel de provas sociais.**
   `.js-ok .sl-X{grid-template-rows:minmax(0,Afr) minmax(0,Bfr)}`, com A e B = altura de cada print
   numa largura de 342px. Os pontos do carrossel se contam sozinhos.
 - **Vídeo:** só é baixado quando a pessoa toca no play; pausa ao trocar de slide ou sair da tela.
-- **Botão "ENTRAR NO GRUPO" da segunda tela:** mesmo link e mesmo evento `Lead` do botão da arte.
+- **Botão "ENTRAR NO GRUPO" da segunda tela:** é **igual ao de cima**: o próprio botão da arte,
+  recortado dela (`assets/botao-entrar.webp`, 584×92, a região x 248–831 e y 163–254 da arte), no
+  mesmo tamanho e com o mesmo pulso. Mesmo link e mesmo evento `Lead`. **Ao trocar a arte, recorte o
+  botão de novo.**
   Fica **grudado no pé da tela enquanto a pessoa rola** (`position:sticky`) e pousa no pé da segunda
   tela no fim da rolagem. Por isso o `.painel-in` é coluna em flex, e não grade: item de grade só
   gruda dentro da própria linha.

@@ -261,24 +261,33 @@ fbq('track', 'PageView');
   .pontos i{width:max(.5rem, 2cqw);height:max(.5rem, 2cqw);border-radius:50%;background:rgba(255,255,255,.3);transition:background-color .2s ease, transform .2s ease}
   .pontos i.on{background:#4cc0ea;transform:scale(1.25)}
 
-  /* Botão "ENTRAR NO GRUPO" da segunda tela: mesmo destino e mesmo evento do botão da arte.
+  /* Botão "ENTRAR NO GRUPO" da segunda tela: IGUAL ao de cima. É o próprio botão da arte, recortado
+     dela (assets/botao-entrar.webp), no mesmo tamanho (54% da largura da tela) e com o mesmo pulso;
+     mesmo destino e mesmo evento. O link é maior que o desenho, para o toque ter 44px ou mais.
      Fica GRUDADO NO PÉ DA TELA enquanto a pessoa rola (sticky): assim que o botão da arte sai de
      vista, este já está embaixo; no fim da rolagem ele pousa no lugar dele, no pé da segunda tela. */
   .btn-grupo{
     position:sticky;bottom:max(4.6cqw, env(safe-area-inset-bottom));z-index:5;flex:none;
-    display:flex;align-items:center;justify-content:center;
-    min-height:max(3rem, 14.4cqw);margin-top:3cqw;padding:0 4cqw;
-    border-radius:999px;text-decoration:none;color:#fff;
-    font:800 max(1rem, 4.36cqw)/1.25 'Montserrat',sans-serif;letter-spacing:.05em;white-space:nowrap;
-    background:linear-gradient(90deg,#1b7387 0%,#0b6fa8 100%);
-    box-shadow:inset 0 0 0 1px rgba(160,220,255,.45), 0 2.6cqw 7.5cqw rgba(0,0,0,.55);
-    transition:transform .15s ease, filter .2s ease;
+    display:block;align-self:center;width:60cqw;height:max(2.75rem, 12cqw);margin-top:2cqw;
+    cursor:pointer;
     -webkit-tap-highlight-color:transparent;
   }
-  .btn-grupo:active{transform:scale(.98)}
-  .play:focus-visible,.seta-c:focus-visible,.btn-grupo:focus-visible{outline:2px solid #fff;outline-offset:3px}
+  .btn-grupo::before,.btn-grupo::after{
+    content:"";position:absolute;left:5%;right:5%;top:50%;aspect-ratio:584 / 92;
+    transform:translateY(-50%);border-radius:999px;pointer-events:none;
+  }
+  .btn-grupo::before{box-shadow:0 2.6cqw 7.5cqw rgba(0,0,0,.6)}  /* sombra de quem flutua sobre o conteúdo */
+  .btn-grupo::after{
+    background:url(assets/botao-entrar.webp) center / 100% 100% no-repeat;
+    animation:pulse 2.6s ease-out infinite;
+    transition:transform .15s ease, filter .2s ease;
+  }
+  .btn-grupo:active::after{transform:translateY(-50%) scale(.98)}
+  .btn-grupo:focus-visible{outline:none}
+  .btn-grupo:focus-visible::after{outline:2px solid #fff;outline-offset:3px}
+  .play:focus-visible,.seta-c:focus-visible{outline:2px solid #fff;outline-offset:3px}
   @media (hover:hover) and (pointer:fine){
-    .btn-grupo:hover{filter:brightness(1.14)}
+    .btn-grupo:hover::after{filter:brightness(1.14)}
     .seta-c:hover{background:rgba(150,210,255,.12)}
     .play:hover{background:rgba(4,6,13,.82)}
   }
@@ -296,7 +305,7 @@ fbq('track', 'PageView');
   @keyframes fadeIn{to{opacity:1}}
   @media (prefers-reduced-motion: reduce){
     .fade{animation:none;opacity:1}
-    .cta::after{animation:none}
+    .cta::after,.btn-grupo::after{animation:none}
     .cue{animation:none}
     .js-ok .revelar{transform:none;transition:opacity .2s ease;transition-delay:0s}
     .js-ok .slide{transform:none}
@@ -375,7 +384,7 @@ fbq('track', 'PageView');
             <span class="sr-only" aria-live="polite" id="carrossel-status"></span>
             <button class="seta-c" type="button" data-passo="1" aria-label="Próximo depoimento"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
           </div>
-          <a class="btn-grupo revelar" data-grupo href="#">ENTRAR NO GRUPO</a>
+          <a class="btn-grupo revelar" data-grupo href="#"><span class="sr-only">Entrar no grupo</span></a>
         </div>
       </div>
     </section>
