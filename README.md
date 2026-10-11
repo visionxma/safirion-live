@@ -43,7 +43,10 @@ informações ficam em carrossel de provas sociais.**
   `.js-ok .sl-X{grid-template-rows:minmax(0,Afr) minmax(0,Bfr)}`, com A e B = altura de cada print
   numa largura de 342px. Os pontos do carrossel se contam sozinhos.
 - **Vídeo:** só é baixado quando a pessoa toca no play; pausa ao trocar de slide ou sair da tela.
-- **Botão do fim:** mesmo link e mesmo evento `Lead` do botão da arte.
+- **Botão "ENTRAR NO GRUPO" da segunda tela:** mesmo link e mesmo evento `Lead` do botão da arte.
+  Fica **grudado no pé da tela enquanto a pessoa rola** (`position:sticky`) e pousa no pé da segunda
+  tela no fim da rolagem. Por isso o `.painel-in` é coluna em flex, e não grade: item de grade só
+  gruda dentro da própria linha.
 
 ## Como visualizar
 

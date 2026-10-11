@@ -177,9 +177,11 @@ fbq('track', 'PageView');
     content:"";position:absolute;inset:0;pointer-events:none;opacity:.05;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
   }
+  /* Coluna em flex (e não grade): o botão do fim gruda no pé da tela (sticky), e item de grade
+     só gruda dentro da própria linha. */
   .painel-in{
     position:relative;height:100%;
-    display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;
+    display:flex;flex-direction:column;
     padding:5.6cqw 4.1cqw 4.6cqw;
   }
   .provas h2{
@@ -191,13 +193,14 @@ fbq('track', 'PageView');
 
   /* Carrossel: todos os slides ocupam a mesma célula e a troca é por opacidade e deslocamento
      (sem trilho e sem rolagem lateral). */
-  .carrossel{display:grid;gap:3cqw;min-height:0}
+  .carrossel{display:grid;gap:3cqw;flex:none}
   .slide{display:grid;gap:3cqw;min-width:0}
   .prova img{
     display:block;width:100%;height:auto;border-radius:3.1cqw;
     box-shadow:0 0 0 1px rgba(150,210,255,.18), 0 2.6cqw 6cqw rgba(0,0,0,.5);
   }
   .js-ok .carrossel{
+    flex:1 1 0;min-height:0;
     grid-template:minmax(0,1fr) / minmax(0,1fr);padding:2cqw;border-radius:3.6cqw;touch-action:pan-y;
     background:linear-gradient(160deg, rgba(44,143,161,.24), rgba(11,111,168,.10));
     box-shadow:0 0 0 1px rgba(150,210,255,.18), 0 3cqw 7.5cqw rgba(0,0,0,.5);
@@ -258,8 +261,11 @@ fbq('track', 'PageView');
   .pontos i{width:max(.5rem, 2cqw);height:max(.5rem, 2cqw);border-radius:50%;background:rgba(255,255,255,.3);transition:background-color .2s ease, transform .2s ease}
   .pontos i.on{background:#4cc0ea;transform:scale(1.25)}
 
-  /* Botão que fecha a tela: mesmo destino e mesmo evento do botão da arte */
+  /* Botão "ENTRAR NO GRUPO" da segunda tela: mesmo destino e mesmo evento do botão da arte.
+     Fica GRUDADO NO PÉ DA TELA enquanto a pessoa rola (sticky): assim que o botão da arte sai de
+     vista, este já está embaixo; no fim da rolagem ele pousa no lugar dele, no pé da segunda tela. */
   .btn-grupo{
+    position:sticky;bottom:max(4.6cqw, env(safe-area-inset-bottom));z-index:5;flex:none;
     display:flex;align-items:center;justify-content:center;
     min-height:max(3rem, 14.4cqw);margin-top:3cqw;padding:0 4cqw;
     border-radius:999px;text-decoration:none;color:#fff;
